@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Gas Measuring Web Terminal</h1>
+    </div>
+    <div style="text-align: center; font-size: 40px;">
+        <p>(Please Sign-in to continue)</p>
+    </div>
+    <div class="container">
+        <div class="login">
+            <form action="">
+                <div class="input">
+                    <label for="email">Enter Email:</label>
+                    <input type="text" id="email" name="email" style="margin-left: 80px;">
+                </div>
+                <div class="input">
+                    <label for="password">Enter Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <button onclick="signin(event)" style= "background-color: deepskyblue;">SIGN IN</button>
+                    <div class="loader-signin"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyDI6sfz7Z9OJIvbxYT1zLMzQy0xHeL2_l0",
+      authDomain: "gas-monitoring-fd61e.firebaseapp.com",
+      projectId: "gas-monitoring-fd61e",
+      storageBucket: "gas-monitoring-fd61e.appspot.com",
+      messagingSenderId: "860719830519",
+      appId: "1:860719830519:web:1cb26a844699d1bb468af2"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+</script>
+<script src="./index.js"></script>
+</html>

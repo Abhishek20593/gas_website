@@ -1,0 +1,149 @@
+body{
+    background-color:rgb(232, 248, 245);
+}
+.title {
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: goldenrod;
+}
+
+.container {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login {
+    font-size: 50px;
+    border: 6px solid red;
+    padding: 60px;
+    background-color: lightcoral;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logout{
+    margin: 30px 45%;
+    background-color: tomato;
+}
+
+.input {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 0 0 25px 0;
+}
+
+.input input{
+    height: 60px;
+    width: 600px;
+    margin-left: 10px;
+    font-size: 50px;
+}
+
+.login button {
+    margin-top: 50px;
+    height: 80px;
+    width: 350px;
+    font-size: 40px;
+}
+
+.data-container{
+    padding: 20px 50px;
+    height: 500px;
+    overflow-y: auto;
+
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.td{
+background-color: rgb(191, 248, 193);
+}
+.temp{
+    background-color: rgb(244, 164, 96);
+}
+.co{
+    background-color: rgb(205, 133, 63);
+}
+.aq{
+    background-color: rgb(238, 130, 228);
+}
+.pm25{
+background-color: rgb(60, 179,113);
+}
+.pm10{
+background-color: rgb(72, 209, 204);
+}
+
+button{
+    font-size: 25px;
+}
+
+.intro-text {
+    font-size: 25px;
+}
+
+.show-graph-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas {
+    display: none;
+    /* width: 1300px !important;
+    height: 500px !important; */
+}
+.loader {
+    position: absolute;
+    margin: 100px 45%;
+    border: 8px solid whitesmoke;
+    border-radius: 50%;
+    border-top: 8px solid whitesmoke;
+    border-bottom: 8px solid springgreen;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    display: none;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/* #data{
+    display: none;
+} */
+
+.loader-signin {
+    border: 8px solid whitesmoke;
+    border-radius: 50%;
+    border-top: 8px solid whitesmoke;
+    border-bottom: 8px solid springgreen;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin-left: 50px;
+    margin-top: 50px;
+    display: none;
+}

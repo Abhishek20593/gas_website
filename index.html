@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="120"> -->
+    <title>Gas Measuring Web Terminal </title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+     <div class="intro-text">
+     <h3 style="text-align: center; background-color: goldenrod; font-size: 40px;">Gas Measuring Web Terminal </h3>
+     <p style="text-align: justify; background-color: rgb(118, 215, 196)"><span style="font-weight: bolder; background-color:yellow;">About the Webpage:</span> The Gas Measuring Web Terminal has a facility to measure the concentration of gas in terms of microcontroller ADC value. Here, the Gas Measurement is performed by using MSP430 Low-power Microcontroller, Bluetooth HC-05 and the nanostructured various Metal Oxide based Chemiresistive Gas sensor. This Web Application is developed and maintained by the 'Bioelectronics Innovation Laboratory', Department of Electronics and Electrical Communication Engineering (E&ECE), Indian Institute of Technology Kharagpur, Kharagpur-721302, West Bengal, India, and hosted by GitHub. This work is a part of the research project entitled “Air Quality Monitoring Prototype (AQI)”, sponsored by the Department of Science and Technology (DST), undertaken in the School of NanoScience and Technology of Indian Institute of Technology Kharagpur, Kharagpur-721302, West Bengal, India. </p>
+     </div>
+
+     
+     <form class="time-date-selector" style="font-size: 25px;">
+         <label for="date">Enter Date: </label> 
+         <input type="date" placeholder="DD/MM/YYYY" id="date" style="font-size: 25px; background-color: linen;"> 
+         <button onclick="getData(event)" style="font-size: 25px; background-color: salmon; text-decoration-color: black;">Submit</button>
+     </form>
+     <div class="data-container">
+        <div class="loader"></div>
+        <table id="data" style="width: 100%;">
+            <tr>
+                <th class="td">Timestamp</th>
+                <th class="aq">Gas_Concentration_Digital_Level (ADC Value) </th>
+            </tr>
+        </table>
+
+     </div>
+     <div class="show-graph-btns">
+
+        <button id="show-aq" onclick="draw_aq_graph()" style="font-size: 20px; background-color: violet;">Click to Show Gas_Concentration_Digital_Level Graph</button>
+        
+        
+    </div>
+
+    <div class="graphs">
+       <canvas id="aq"></canvas> 
+    </div>
+
+     <button onclick="signOut()" class="logout">LOG OUT</button>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+<script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyDI6sfz7Z9OJIvbxYT1zLMzQy0xHeL2_l0",
+      authDomain: "gas-monitoring-fd61e.firebaseapp.com",
+      projectId: "gas-monitoring-fd61e",
+      databaseURL: "https://gas-monitoring-fd61e-default-rtdb.firebaseio.com/",
+      storageBucket: "gas-monitoring-fd61e.appspot.com",
+      messagingSenderId: "860719830519",
+      appId: "1:860719830519:web:1cb26a844699d1bb468af2"
+};
+// Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+    firebase.auth().onAuthStateChanged((user) => {
+    // console.log(user)
+    if(user){
+        // getData()
+        getLocation()
+    }else{
+        console.log("Not logged in index.html")
+        location.href = "signIn.html"
+    }
+})
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0/dist/Chart.min.js"></script>
+<script src="./index.js"></script>
+</html>
