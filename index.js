@@ -47,7 +47,7 @@ function getData(event){
     document.getElementById('data').innerHTML= `
         <tr>
             <th class="td">Timestamp</th>
-            <th class="aq">Gas_Concentration_Digital_Level (ADC Value) </th>
+            <th class="aq">Gas Sensor Output</th>
         </tr>
     `;
     timestamp_arr = Array()
@@ -128,7 +128,7 @@ function draw_aq_graph(){
     data: {
         labels: timestamp_arr,
         datasets: [{
-            label: 'Gas_Concentration_Digital_Level (ADC Value)',
+            label: 'Gas Sensor Output',
             backgroundColor: 'rgb(238, 130, 228)',
             borderColor: 'rgb(238, 130, 228)',
             data: aq,
@@ -142,7 +142,7 @@ function draw_aq_graph(){
         //events: ['click'],
         title: {
                 display: true,
-                text: 'Gas_Concentration_Digital_Level (ADC Value)'
+                text: 'Gas Sensor Output'
         },
         tooltips: {
                 mode: 'nearest',
@@ -164,7 +164,7 @@ function draw_aq_graph(){
                 display: true,
                 scaleLabel: {
                     display: true,
-                    labelString: 'Gas_Concentration_Digital_Level (ADC Value)'
+                    labelString: 'Gas Sensor Output'
                 }
             }]
         }
