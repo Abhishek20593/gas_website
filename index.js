@@ -8,8 +8,8 @@ function signin(event){
             // console.log(user)
             console.log("Signed in")
             document.querySelector(".loader-signin").style.display = "none";
-            // location.href = "/gas_website"
-            location.href = "/"
+            location.href = "/gas_website"
+            //location.href = "/"
             // document.getElementsByClassName("text")[0].style.display = "block";
         })
         .catch((error) => {
