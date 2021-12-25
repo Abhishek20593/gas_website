@@ -8,7 +8,8 @@ function signin(event){
             // console.log(user)
             console.log("Signed in")
             document.querySelector(".loader-signin").style.display = "none";
-            location.href = "/gas_website"
+            // location.href = "/gas_website"
+            location.href = "/"
             // document.getElementsByClassName("text")[0].style.display = "block";
         })
         .catch((error) => {
@@ -56,7 +57,8 @@ function getData(event){
     let [year, month, date] = document.getElementById("date").value.split("-")
     console.log(document.getElementById("date").value)
 
-    firebase.database().ref(year+"/"+month+"/"+date+"/").once('value').then( snapshot => {     // use the on() oronce() methods of firebase.database.Reference to observe events.
+
+    firebase.database().ref("GAS_SENSOR_APP_V1/"+year+"/"+month+"/"+date+"/").once('value').then( snapshot => {     // use the on() oronce() methods of firebase.database.Reference to observe events.
         document.querySelector(".loader").style.display = "none";
         let data = snapshot.val();
         // console.log(data)
@@ -99,18 +101,18 @@ function insert_data(timestamp, data){
         </tr>`; 
 }
 
-function getLocation(){
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(getPos, error)
-    }else{
-        alert("Geo Location not supported");
-    }
-}
+// function getLocation(){
+//     if(navigator.geolocation){
+//         navigator.geolocation.getCurrentPosition(getPos, error)
+//     }else{
+//         alert("Geo Location not supported");
+//     }
+// }
 
-function getPos(position){
-    document.querySelector(".location").innerHTML = "Latitude: " + position.coords.latitude +
-                                             " Longitude: " + position.coords.longitude 
-}
+// function getPos(position){
+//     document.querySelector(".location").innerHTML = "Latitude: " + position.coords.latitude +
+//                                              " Longitude: " + position.coords.longitude 
+// }
 
 function error(err) {
     console.log(err.message);
