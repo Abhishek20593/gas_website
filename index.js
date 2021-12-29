@@ -91,13 +91,13 @@ function insert_data(timestamp, data){
         data[i] = Number(data[i].substring(1,data[i].length-1))
     }
     timestamp_arr.push(timestamp)
-    aq.push(data[0])
+    aq.push(data[3])
     // console.log(data);
     var row = document.getElementById('data')
     row.innerHTML+= `
         <tr>
             <td class="td">${timestamp}</td>
-            <td class="aq">${data[0]}</td>
+            <td class="aq">${data[3]}</td>
         </tr>`; 
 }
 
