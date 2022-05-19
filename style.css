@@ -101,6 +101,16 @@ button{
     justify-content: center;
 }
 
+.display-values {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.display-values>div {
+    flex: 1;
+}
+
 canvas {
     display: none;
     /* width: 1300px !important;
